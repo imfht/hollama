@@ -6,6 +6,7 @@ db = SQLAlchemy()
 
 class RequestLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    ip_addr = db.Column(db.Text)
     path = db.Column(db.Text)
     method = db.Column(db.Text)
     headers = db.Column(db.Text)
@@ -15,9 +16,9 @@ class RequestLog(db.Model):
 
 class PathSetting(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    path = db.Column(db.Text)
-    method = db.Column(db.Text)
-    sence = db.Column(db.Text) # 
+    path = db.Column(db.String(255))
+    method = db.Column(db.String(32))
+    sence = db.Column(db.String(32)) # 
     response = db.Column(db.Text)
     response_as_json = db.Column(db.Boolean, default=True)
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
@@ -26,3 +27,5 @@ class PathSetting(db.Model):
     __table_args__ = (
         db.UniqueConstraint('path', 'method', 'sence'),
     )
+
+
