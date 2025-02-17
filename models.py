@@ -6,7 +6,6 @@ db = SQLAlchemy()
 
 class RequestLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    ip_addr = db.Column(db.Text)
     path = db.Column(db.Text)
     method = db.Column(db.Text)
     headers = db.Column(db.Text)

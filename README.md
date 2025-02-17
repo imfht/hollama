@@ -1,2 +1,2 @@
 # hollama
-the honeypot for ollama
+the honeypot for ollama.

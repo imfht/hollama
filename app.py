@@ -23,7 +23,6 @@ def index():
 @app.before_request
 def before_request():
     request_info = {
-        'ip_addr': request.remote_addr,
         'path': request.path,
         'method': request.method,
         'headers': json.dumps(dict(request.headers)),
