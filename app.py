@@ -3,6 +3,7 @@ app = flask.Flask(__name__)
 from models import PathSetting,RequestLog
 # init sqlalchemy
 from models import db
+import os
 import json
 from flask import request
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
